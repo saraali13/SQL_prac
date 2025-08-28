@@ -10,3 +10,4 @@ select new_time('6-aug-2023','PST','EST') from dual; -- not working due to time 
 select to_char(sysdate,'DD-MM-YY') from dual; 
 select to_char(sysdate,'Day') from dual;
 SELECT * FROM EMPLOYEES WHERE to_char(hire_date,'Day')= 'Wednesday';
+SELECT * FROM EMPLOYEES WHERE to_char(hire_date,'Day')= 'Friday   ';
