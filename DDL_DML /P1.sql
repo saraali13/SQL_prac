@@ -22,6 +22,10 @@ alter table students add (constraint
 check_age check(age between 18 and 30),
 constraint unique_email unique(email)); --primary key -> 1 col only unique and not null, while the unique constraint can be applied to more than one col and can be null too ( same for not null constraint)
 
+--for updating the row values
+UPDATE employee
+SET dep_id = 3
+WHERE emp_id = 5;
 create table departments(
 id int primary key,
 dep_name varchar(15) not null
