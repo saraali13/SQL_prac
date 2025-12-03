@@ -1,6 +1,11 @@
 set SERVEROUTPUT on;
 
 --3 phases of pl language: decalartion(var dec, optional),execution(mandatory),exception(optional)
+DECLARE         -- (optional) variables
+BEGIN           -- required, executable code
+EXCEPTION       -- (optional) error handling
+END;
+
 declare--declaration of vars
 sec_name varchar(20) := 'BS-AI';--:= is the assignment op
 course_name varchar(20) := 'DB';
@@ -8,7 +13,7 @@ course_name varchar(20) := 'DB';
 BEGIN--execution
 DBMS_OUTPUT.PUT_LINE('Welcome' || sec_name || 'to the' || course_name);
 End;
-/--to stop the execution
+/ --to stop the execution
 
 declare
 a int := 10;
@@ -38,9 +43,10 @@ n4 int := 12;
 begin
 DBMS_OUTPUT.PUT_LINE('inner var of n3 ' || n3);
 DBMS_OUTPUT.PUT_LINE('inner var of n4 ' || n4);
-end;
-end;
+end; --inner one
+end; --puter one
 /
+  
 declare
 e_name varchar(20);
 begin
@@ -52,6 +58,7 @@ no_data_found then
 DBMS_OUTPUT.PUT_LINE('No Employee Found ');
 end;
 /
+  
 declare
 e_name varchar(20);
 begin
@@ -59,6 +66,7 @@ update employees set salary=salary*1.10 where DEPARTMENT_ID=(select department_i
 DBMS_OUTPUT.PUT_LINE('salary updated...');
 end;
 /
+  
 declare 
 e_id employees.employee_id%type;
 e_name employees.first_name%type;-- assigns the type of var from the table(col mentioned)
